@@ -1,0 +1,27 @@
+[
+    {
+        "img": "../assets/images/gallery.png",
+        "alt": "Unity Project",
+        "name": "The Deliverer (Unity3d)",
+        "button" : "Unity 3D"
+    },
+    {
+        "img": "../assets/images/KlinikhMain.png",
+        "alt": "Electronic Health Record",
+        "name": "Klinik|H| - in development",
+        "button" : "test"
+    },
+    {
+        "img": "../assets/images/powMovement.png",
+        "alt": "Fitness Blog",
+        "name": "PowMovement",
+        "button" : "test"
+    },
+    {
+        "img": "../assets/images/comingSoon.png",
+        "alt": "Coming Soon",
+        "name": "Coming Soon",
+        "button" : "test"
+    }
+   
+]
