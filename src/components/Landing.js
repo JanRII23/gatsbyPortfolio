@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { Button } from './Button';
 import { StaticImage } from 'gatsby-plugin-image';
 import ReactPlayer from 'react-player/lazy';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-// import mainBackground from '../assets/images/backgroundmainOutside.png'
-
-// import {menuData} from '../data/MenuData'
+import {menuData} from '../data/MenuData'
 // import { Link } from "gatsby"
 // import { BrowserRouter } from "react-router-dom"
 // import { HashLink } from "react-router-hash-link"
@@ -41,19 +40,19 @@ const Landing = () => {
         </LandingBg>
         <LandingContent>
             <LandingItems>
-                <LandingH1>Explore</LandingH1>
+                <LandingH1>Welcome</LandingH1>
                 {/* <LandingP>About</LandingP> */}
-                <Button primary = "true" big = "false" round = "true" to="/contact">Contact</Button>
+                <Button primary = "true" big = "false" round = "true" smooth to="#contactInfo" stripHash>Contact</Button>
 
             </LandingItems>
             
-                {/* <NavMenu>
+                <NavMenu>
             {menuData.map((item, index)=> (
-                <NavLink smooth to = {item.link} key= {index}>
+                <NavLink smooth to = {item.link} key= {index} stripHash>
                     {item.title}
                 </NavLink>
             ))}
-            </NavMenu> */}
+            </NavMenu>
             
           
           <LandingPinOne>
@@ -219,38 +218,38 @@ const LandingH1 = styled.h1`
 
 `
 
-// const NavMenu = styled.div`
-//     display: flex;
-//     align-items: center;
-//     flex-direction: column;
-//     align-items: flex-end;
-//     /* margin-right: -48px; */
+const NavMenu = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
+    /* margin-right: -48px; */
    
 
 
-//   @media screen and (max-width: 768px){
-//     display: none;
-//    }
+  @media screen and (max-width: 768px){
+    display: none;
+   }
 
-// `
+`
 
-// const NavLink = styled(HashLink)`
-//   color: #fff;
-//   display: flex;
-//   align-items: center;
-//   text-decoration: none;
-//   /* padding: .5rem 1rem; */
-//   padding-top: .5rem;
-//   padding-bottom: .5rem;
-//   height: 100%;
-//   cursor: pointer;
+const NavLink = styled(AnchorLink)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  /* padding: .5rem 1rem; */
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  height: 100%;
+  cursor: pointer;
 
-//   &:hover{
-//     color: black;
-//   }
+  &:hover{
+    color: black;
+  }
 
   
-// `
+`
 
 const LandingPinOne = styled.div`
    position: absolute;

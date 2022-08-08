@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+// import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import Img from 'gatsby-image'
 // import { FaRegLightbulb } from "react-icons/fa"
 // import {GiSpartanHelmet} from "react-icons/gi"

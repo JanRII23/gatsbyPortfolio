@@ -1,30 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 import EmailBg from '../assets/images/gatsby-icon.png'
-import { SiLinkedin } from 'react-icons/si'
-// import { Button } from './Button'
+// import { SiLinkedin } from 'react-icons/si'
+import { Button } from './Button'
 
 //make sure to add some sort of database
 //find a new image as an overlay
 
 const Email = () => {
   return (
-    <EmailContainer>
+    <EmailContainer id = "contactInfo">
         <EmailContent>
-            <h1>Reach Out Via LinkedIn</h1>
+            <h1>Reach Out! </h1>
             <p>Open to new opportunities and challenges</p>
-            {/* <form action="#">
+            <form action="https://formsubmit.co/jrejasii@gmail.com" method="POST">
                 <FormWrap>
+                    {/* HoneyPot */}
+                    <input type="text" name="_honey" style = { {display: "none"} } />
+
+                    {/* disable captcha */}
+                    <input type = "hidden" name="_captcha" value = "false"/>
+
+                    {/* reroute to succes.js */}
+                    {/* <input type = "hidden" name="_next" to="/succes.js" /> */}
+
                     <label htmlFor='firstNameLastName'>
-                        <input type ='text' placeholder='John/Jane Doe' id='firstNameLastName' />
+                        <input type ='text' placeholder='John/Jane Doe' name = "Full&nbsp;Name" id='firstNameLastName' required/>
                     </label>
                    
                     <label htmlFor='email'>
-                        <input type ='email' placeholder='example@gmail.com' id='email' />
+                        <input type ='email' placeholder='example@gmail.com' name = "Email" id='email' required/>
                     </label>
 
                     <label htmlFor='message'>
-                        <input type= 'text' placeholder='lorem ipsum' id='message'/>
+                        <input type= 'text' placeholder='message' id='message' name = "Message" required/>
                     </label>
 
                     <Button as="button" type="submit" primary = "true" round = "true" 
@@ -41,8 +50,9 @@ const Email = () => {
                     
                     >Send</Button>
                 </FormWrap>
-            </form> */}
-            <a href = "https://www.linkedin.com/in/janrejasii" rel = "noopener noreferrer" > 
+                
+            </form>
+            {/* <a href = "https://www.linkedin.com/in/janrejasii" rel = "noopener noreferrer" > 
   
             <SiLinkedin css={`color: white; font-size: 3rem;
                 &:hover{
@@ -50,7 +60,7 @@ const Email = () => {
                 }
 
             `} />
-              </a>
+              </a> */}
         </EmailContent>
     </EmailContainer>
   )
@@ -105,29 +115,29 @@ const EmailContent = styled.div`
 
 `
 
-// const FormWrap = styled.div`
+const FormWrap = styled.div`
 
-//     input{
-//         padding: 1rem 1.5rem;
-//         outline: none;
-//         width: 350px;
-//         height: 48px;
-//         border-radius: 50px;
-//         border: none;
-//         margin-right: 1rem;
-//     }
+    input{
+        padding: 1rem 1.5rem;
+        outline: none;
+        width: 350px;
+        height: 48px;
+        border-radius: 50px;
+        border: none;
+        margin-right: 1rem;
+    }
    
 
-//     @media screen and (max-width: 768px){
-//         display: flex;
-//         flex-direction: column;
-//         padding: 0 1rem;
+    @media screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
 
-//         input{
-//             margin-bottom: 1rem;
-//             width: 100%;
-//             margin-right: 0;
-//         }
-//     }
+        input{
+            margin-bottom: 1rem;
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 
-// `
+`

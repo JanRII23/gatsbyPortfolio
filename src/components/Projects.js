@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 // import { Button } from './Button';
 // import { ImLocation } from "react-icons/im"
 
-// import { HiExternalLink } from "react-icons/hi"
+import { HiExternalLink } from "react-icons/hi"
 
 //make sure that for the unity project it has the unity logo playing and on hover it switches over to gallery and video link/view
     //actually on hover showcase images, but button click it lazy loads a ut video
@@ -26,6 +26,7 @@ const Projects = ({heading}) => {
             node {
               alt
               button
+              link
               name
               img {
                 childImageSharp {
@@ -54,11 +55,13 @@ const Projects = ({heading}) => {
                         />
                     <ProjectInfo>
                         <TextWrap>
-                            {/* <HiExternalLink css={`color: white; font-size: 1.5rem;
+                            <a href = {item.node.link} el = "noopener noreferrer">
+                            <HiExternalLink css={`color: white; font-size: 1.5rem;
                                 &:hover{
                                     cursor: pointer;
                                 }
-                            `}/> */}
+                            `}/>
+                            </a>
                             <ProjectTitle>{item.node.name}</ProjectTitle>
                         </TextWrap>
                         {/* <Button to ="/projects" primary = "true" round = "true" css={`position: absolute; top: 420px; font-size: 14px;`}>{item.node.button}</Button> */}

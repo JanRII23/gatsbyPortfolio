@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { AiOutlineGithub } from "react-icons/ai"
 import { FaLinkedinIn } from 'react-icons/fa'
+import { IoIosArrowUp } from 'react-icons/io'
 
 
 const SocialFooter = () => {
@@ -13,6 +14,17 @@ const SocialFooter = () => {
     <SocialContainer>
 
         <SocialWrap>
+
+        <a href="#top" >
+            <IoIosArrowUp css={`color: white; font-size: 2rem;
+
+              &:hover{
+                cursor: pointer;
+              }
+
+            `}/>
+            </a>
+
           <a href="https://github.com/JanRII23" rel = "noopener noreferrer" >
             <AiOutlineGithub css={`color: white; font-size: 2rem;
 
@@ -22,6 +34,7 @@ const SocialFooter = () => {
 
             `}/>
             </a>
+
             <a href = "https://www.linkedin.com/in/janrejasii" rel = "noopener noreferrer" > 
   
             <FaLinkedinIn css={`color: white; font-size: 2rem;
@@ -44,7 +57,7 @@ export default SocialFooter
 
 const VerticalLine = styled.div`
     width: 5%;
-    height: 40%;
+    height: 35%;
     border: .5px solid white;
 `
 
@@ -65,7 +78,7 @@ const SocialContainer = styled.div`
     right: 0px;
     left: auto;
     width: 5%;
-    height: 20%;
+    height: 25%;
     background: transparent;
     z-index: 10;
     /* border: 2px solid green; */

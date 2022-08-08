@@ -1,6 +1,7 @@
 import * as React from "react"
 // import PropTypes from "prop-types"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
+import {AnchorLink } from "gatsby-plugin-anchor-links"
 import styled from 'styled-components'
 import {FaBars} from 'react-icons/fa' //this is how you import some icons from react
 import { useStaticQuery } from 'gatsby'
@@ -40,7 +41,7 @@ const Header = () => {
 
   return (
     <Nav>
-        <NavLink to="#ProfileInfo">JANRII</NavLink>
+        <NavLink smooth to="#ProfileInfo" stripHash>JANRII</NavLink>
         <Bars />
         {/* <NavMenu>
           {menuData.map((item, index)=> (
@@ -80,7 +81,7 @@ const Nav = styled.nav`
   /* border: 2px solid blue; */
 `
 
-const NavLink = styled(Link)`
+const NavLink = styled(AnchorLink)`
   color: #fff;
   display: flex;
   align-items: center;
