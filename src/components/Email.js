@@ -13,7 +13,7 @@ const Email = () => {
         <EmailContent>
             <h1>Reach Out! </h1>
             <p>Open to new opportunities and challenges</p>
-            <form action="https://formsubmit.co/jrejasii@gmail.com" method="POST">
+            <form action="https://formsubmit.co/ca04aa0b13a65af34776b6f79e419393" method="POST">
                 <FormWrap>
                     {/* HoneyPot */}
                     <input type="text" name="_honey" style = { {display: "none"} } />

@@ -26,6 +26,11 @@ import { RiMapPinFill } from "react-icons/ri"
 //future add the video embedded in
 //make sure to figure out how to fix the issues with minimizing vertically
 
+
+   
+
+    // "deploy": "gatsby-plugin-s3 deploy"
+
 const Landing = () => {
 
 
