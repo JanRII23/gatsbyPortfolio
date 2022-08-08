@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import { Button } from './Button';
 import { StaticImage } from 'gatsby-plugin-image';
+import ReactPlayer from 'react-player/lazy';
+
 // import mainBackground from '../assets/images/backgroundmainOutside.png'
 
 // import {menuData} from '../data/MenuData'
@@ -65,6 +67,12 @@ const Landing = () => {
           <LandingPinThree>
           <RiMapPinFill css={` font-size: 2.5rem;`}/>
           </LandingPinThree>
+
+          <BackgroundVideo>
+
+          <ReactPlayer url = 'https://youtu.be/tugXDYhF2wg' light = "https://i.ytimg.com/vi/tugXDYhF2wg/hqdefault.jpg" width = '100%' height = '100%' className = 'react-player' />
+
+          </BackgroundVideo>
             
        
         </LandingContent>
@@ -287,6 +295,30 @@ const LandingPinThree = styled.div`
     transition: 0.3s;
     transform: scale(1.2);
    }
+`
+
+const BackgroundVideo = styled.div`
+    position: absolute;
+    right: 7%;
+    bottom: 7%;
+    width: 14%;
+    height: 18%;
+    opacity: .5;
+    background-color: black;
+    border: 2px solid black;
+
+    &:hover{
+        transition: 0.65s;
+        transform: scale(1.25);
+        cursor: pointer;
+
+    }
+
+    @media screen and (max-width: 1100px){
+    display: none;
+    }
+
+    
 `
 
 
