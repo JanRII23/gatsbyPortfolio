@@ -28,7 +28,7 @@ import { RiMapPinFill } from "react-icons/ri"
 
 
    
-
+// "deploy": "gatsby build --prefix-paths && gh-pages -d public"
     // "deploy": "gatsby-plugin-s3 deploy"
 
 const Landing = () => {
