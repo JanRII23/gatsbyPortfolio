@@ -26,5 +26,6 @@ const ErrorPage = styled.div`
   height: 100vh;
   /* border: 2px solid blue; */
   flex-direction: column;
+  text-align: center;
   
 `

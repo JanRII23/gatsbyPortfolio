@@ -269,6 +269,10 @@ const LandingPinOne = styled.div`
     transition: 0.3s;
     transform: scale(1.2);
    }
+
+   @media screen and (max-width: 500px){
+        left: 52%;
+   }
 `
 
 const LandingPinTwo = styled.div`
@@ -283,6 +287,11 @@ const LandingPinTwo = styled.div`
     color: maroon;
     transition: 0.3s;
     transform: scale(1.2);
+   }
+
+   @media screen and (max-width: 500px){
+    left: 71%;
+    top: 38%;
    }
 `
 

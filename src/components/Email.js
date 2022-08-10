@@ -12,7 +12,7 @@ const Email = () => {
     <EmailContainer id = "contactInfo">
         <EmailContent>
             <h1>Reach Out! </h1>
-            <p>Open to new opportunities and challenges</p>
+            <p>Open to new opportunities and challenges (RESUME)</p>
             <form action="https://formsubmit.co/ca04aa0b13a65af34776b6f79e419393" method="POST">
                 <FormWrap>
                     {/* HoneyPot */}
@@ -125,6 +125,17 @@ const FormWrap = styled.div`
         border-radius: 50px;
         border: none;
         margin-right: 1rem;
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1250px){
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
+
+        input{
+            margin-bottom: 1rem;
+            margin-right: 0;
+        }
     }
    
 

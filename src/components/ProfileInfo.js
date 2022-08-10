@@ -65,9 +65,14 @@ const ProfileInfo = () => {
                 
                         </ul>
                         <ul>
-                            <li>R</li>
+                            <li>Typescript</li>
                             <li>HTML/CSS</li>
                             <li>Javascript</li>
+                         
+                
+                        </ul>
+                        <ul>
+                            <li>R</li>
                          
                 
                         </ul>
@@ -87,7 +92,7 @@ const ProfileInfo = () => {
                     <li>React.js</li>
                     <li>Gatsby</li>
                     <li>GraphQL</li>
-                    <li>SQLite3</li>
+                    <li>SQLite</li>
                    
 
                 </ul>
@@ -99,7 +104,6 @@ const ProfileInfo = () => {
                     <li>Windows</li>
                     <li>Mac OS</li>
                     <li>Linux</li>
-                   
                     <li>Unity</li>
                    
             
@@ -109,8 +113,11 @@ const ProfileInfo = () => {
                     
                     <li>VSCode</li>
                     <li>Jupyter</li>
-                 
                     <li>Colab</li>
+                    <li>Angular</li>
+                    <li>RStudio</li>
+                    <li>Bootstrap</li>
+
             
                 </ul>
             
@@ -199,13 +206,14 @@ const Testimonial = styled.div`
         width: 20%;
         vertical-align: top;
 
-        @media screen and (max-width: 500px){
+        @media screen and (max-width: 1100px){
         width: 30%;
     }
     }
 
     li{
         margin-bottom: 2px;
+      
     }
     
 `
