@@ -207,12 +207,13 @@ const Testimonial = styled.div`
         vertical-align: top;
 
         @media screen and (max-width: 1100px){
-        width: 30%;
+        width: 35%;
     }
     }
 
     li{
         margin-bottom: 2px;
+        margin-left: 4px;
       
     }
     

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import EmailBg from '../assets/images/gatsby-icon.png'
 // import { SiLinkedin } from 'react-icons/si'
 import { Button } from './Button'
+import resume from "../assets/images/Jan_Rejas_Resume.pdf"
 
 //make sure to add some sort of database
 //find a new image as an overlay
@@ -12,7 +13,7 @@ const Email = () => {
     <EmailContainer id = "contactInfo">
         <EmailContent>
             <h1>Reach Out! </h1>
-            <p>Open to new opportunities and challenges (RESUME)</p>
+            <p>Open to new opportunities and challenges &nbsp;(<a href = {resume} target="_blank" rel="noopener noreferrer">&nbsp;Resume&nbsp;</a>)</p>
             <form action="https://formsubmit.co/ca04aa0b13a65af34776b6f79e419393" method="POST">
                 <FormWrap>
                     {/* HoneyPot */}
@@ -111,6 +112,16 @@ const EmailContent = styled.div`
 
     form{
         z-index: 10;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+
+        &:hover{
+            color: black;
+        }
+        
     }
 
 `

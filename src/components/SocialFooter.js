@@ -5,6 +5,8 @@ import { AiOutlineGithub } from "react-icons/ai"
 import { FaLinkedinIn } from 'react-icons/fa'
 import { IoIosArrowUp } from 'react-icons/io'
 
+import resume from "../assets/images/Jan_Rejas_Resume.pdf"
+
 
 const SocialFooter = () => {
   return (
@@ -25,7 +27,11 @@ const SocialFooter = () => {
             `}/>
             </a>
 
-          <a href="https://github.com/JanRII23" rel = "noopener noreferrer" >
+            <a href={resume} target = "_blank" rel = "noopener noreferrer" >
+              <CVDiv><h2>CV</h2></CVDiv>
+            </a>
+
+          <a href="https://github.com/JanRII23" target="_blank" rel = "noopener noreferrer" >
             <AiOutlineGithub css={`color: white; font-size: 2rem;
 
               &:hover{
@@ -35,7 +41,7 @@ const SocialFooter = () => {
             `}/>
             </a>
 
-            <a href = "https://www.linkedin.com/in/janrejasii" rel = "noopener noreferrer" > 
+            <a href = "https://www.linkedin.com/in/janrejasii" target="_blank" rel = "noopener noreferrer" > 
   
             <FaLinkedinIn css={`color: white; font-size: 2rem;
               &:hover{
@@ -57,8 +63,13 @@ export default SocialFooter
 
 const VerticalLine = styled.div`
     width: 5%;
-    height: 35%;
+    height: 25%;
     border: .5px solid white;
+`
+
+const CVDiv = styled.div`
+    color: white;
+    text-decoration: none;
 `
 
 const SocialWrap = styled.div`
@@ -68,6 +79,12 @@ const SocialWrap = styled.div`
     justify-content: space-between;
     /* border: 2px solid blue; */
     height: 100%;
+    
+
+    a{
+      text-decoration: none;
+    }
+
 
 `
 
@@ -78,10 +95,11 @@ const SocialContainer = styled.div`
     right: 0px;
     left: auto;
     width: 5%;
-    height: 25%;
+    height: 30%;
     background: transparent;
     z-index: 10;
     /* border: 2px solid green; */
+
 
     @media screen and (max-width: 768px){
     display: none;

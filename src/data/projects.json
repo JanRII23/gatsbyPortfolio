@@ -7,11 +7,11 @@
         "link": "https://www.youtube.com/playlist?list=PLsMAYQfTp7E5Rspx1MuTJgNk5j3WS5SWs"
     },
     {
-        "img": "../assets/images/KlinikhMain.png",
-        "alt": "Electronic Health Record",
-        "name": "Klinik|H| - in development",
+        "img": "../assets/images/toDoLogo.png",
+        "alt": "To-Do App",
+        "name": "Angular To-Do App",
         "button" : "test",
-        "link": "https://github.com/JanRII23/ehr_emr"
+        "link": "https://github.com/JanRII23/ehr_emr/tree/main/angularEHR_main"
     },
     {
         "img": "../assets/images/powMovement.png",
@@ -20,10 +20,11 @@
         "button" : "test",
         "link": "/Blog"
     },
+
     {
-        "img": "../assets/images/comingSoon.png",
-        "alt": "Coming Soon",
-        "name": "Coming Soon",
+        "img": "../assets/images/KlinikhMain.png",
+        "alt": "Electronic Health Record",
+        "name": "Klinik|H| - in development",
         "button" : "test",
         "link": "/404"
     }
