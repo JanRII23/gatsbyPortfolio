@@ -2,7 +2,7 @@ export const menuData = [
     {title: "", link: "#LandingInfo"},
     {title: "Projects", link: "#ProjectInfo"},
     {title: "About", link: "#ProfileInfo"},
-    {title: "Blog", link: "/Blog"},
+    {title: "Blog", link: "/blog"},
    
 ]
 
