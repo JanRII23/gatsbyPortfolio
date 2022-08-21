@@ -21,16 +21,27 @@ export default function Blog({ data }) {
     height: '100%'} } src="../assets/images/backgroundmainOutside.png" alt="Background Img"  />
         </BlogBg> */}
 
-        <BlogContent>
+        <BlogHeader>
+
           <h1>BLOG POSTS</h1>
           <Link to="/">HOME</Link>
-          {posts.map(post => (
-            <article key={post.id}>
+
+        </BlogHeader>
+
+        <BlogContent>   
+
+        {posts.map(post => (
+          <article key={post.id}>
+            <Link to={post.fields.slug}>
               <h2>{post.frontmatter.title}</h2>
-              <small>{post.frontmatter.author}, {post.frontmatter.date}</small>
-              <p>{post.excerpt}</p>
-            </article>
-          ))}
+            </Link>
+            <small>
+              {post.frontmatter.author}, {post.frontmatter.date}
+            </small>
+            <p>{post.excerpt}</p>
+          </article>
+        ))}
+  
 
         </BlogContent>
 
@@ -42,31 +53,35 @@ export default function Blog({ data }) {
 }
 
 export const pageQuery = graphql`
-query MyQuery {
-  blog: allMarkdownRemark {
-    posts: nodes {
-      frontmatter {
-        date
-        title
-        author
+  query MyQuery {
+    blog: allMarkdownRemark {
+      posts: nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          date
+          title
+          author
+        }
+        excerpt
+        id
       }
-      excerpt
-      id
     }
   }
-}
-
 `
 
 const BlogContainer = styled.div`
     background: rgb(145,145,145);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     min-height: 100vh;
     padding: 0 1 rem;
     position: relative;
     margin-top: -100px;
+    flex-direction: column;
+    /* border: 2px solid blue; */
    
 `
 
@@ -82,7 +97,19 @@ const BlogContainer = styled.div`
 
 // `
 
+
+//make sure this is grid style
 const BlogContent = styled.div`
+
+`
+
+const BlogHeader = styled.div`
+
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+
 `
 
 
