@@ -94,6 +94,7 @@ const ProjectsContainer = styled.div`
     padding: 5rem calc((100vw - 1300px) / 2);
     background: rgb(145,145,145);
     /* color: white; */
+   
     
 
 `

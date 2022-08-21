@@ -31,15 +31,19 @@ export default function Blog({ data }) {
         <BlogContent>   
 
         {posts.map(post => (
-          <article key={post.id}>
+          <BlogCard key={post.id}>
+            <BlogInfo>
             <Link to={post.fields.slug}>
               <h2>{post.frontmatter.title}</h2>
             </Link>
+            </BlogInfo>
+            <TextWrap>
             <small>
               {post.frontmatter.author}, {post.frontmatter.date}
             </small>
             <p>{post.excerpt}</p>
-          </article>
+            </TextWrap>
+          </BlogCard>
         ))}
   
 
@@ -71,17 +75,41 @@ export const pageQuery = graphql`
   }
 `
 
+const BlogCard = styled.div`
+  border: 2px solid white;
+`
+
+const BlogInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+
+    @media screen and (max-width: 280px){
+        padding: 0 1rem;
+    }
+
+`
+
+const TextWrap = styled.div`
+
+    /* align-items: center; */
+    text-align: center;
+    /* position: absolute; */
+    top: 375px;
+`
+
 const BlogContainer = styled.div`
     background: rgb(145,145,145);
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; */
     min-height: 100vh;
     padding: 0 1 rem;
     position: relative;
     margin-top: -100px;
     flex-direction: column;
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
    
 `
 
@@ -100,15 +128,34 @@ const BlogContainer = styled.div`
 
 //make sure this is grid style
 const BlogContent = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    padding: 0 2rem;
+ 
+
+    @media screen and (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+        
+    }
+
+    @media screen and (max-width: 868px){
+        grid-template-columns: 1fr;
+    }
 
 `
 
 const BlogHeader = styled.div`
 
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
+    font-size: clamp(1rem, 1vw, 2rem);
+    text-align: center;
+    margin-bottom: 5rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid blue;
+    padding: 5rem calc((100vw - 1300px) / 2);
 
 `
 
