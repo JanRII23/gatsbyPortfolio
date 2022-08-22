@@ -5,6 +5,8 @@ import { Link } from "gatsby"
 
 import styled from 'styled-components'
 import Layout from "../components/layout"
+
+import { GiBleedingEye } from "react-icons/gi"
 // import { StaticImage } from 'gatsby-plugin-image';
 
 export default function Blog({ data }) {
@@ -24,7 +26,8 @@ export default function Blog({ data }) {
         <BlogHeader>
 
           <h1>BLOG POSTS</h1>
-          <Link to="/">HOME</Link>
+          <br></br>
+          <Link to="/" css={`color: white; text-decoration: none;`}>HOME</Link>
 
         </BlogHeader>
 
@@ -33,8 +36,16 @@ export default function Blog({ data }) {
         {posts.map(post => (
           <BlogCard key={post.id}>
             <BlogInfo>
-            <Link to={post.fields.slug}>
-              <h2>{post.frontmatter.title}</h2>
+            <Link to={post.fields.slug} css={`color: black; text-decoration: none;`}>
+              <h2>{post.frontmatter.title} <GiBleedingEye css={`
+                  color: black;
+                  font-size: 1.5rem;
+                  padding-top: 2px;
+                  &:hover{
+                    cursor: pointer;
+                  }              
+              `}/></h2>
+              
             </Link>
             </BlogInfo>
             <TextWrap>
@@ -76,7 +87,19 @@ export const pageQuery = graphql`
 `
 
 const BlogCard = styled.div`
-  border: 2px solid white;
+  border: 2px solid black;
+  border-radius: 12px;
+  background: white;
+  color: black;
+
+  width: 500px;
+  height: auto;
+
+  @media screen and (max-width: 1200px) {
+        width: 400px;
+        
+    }
+
 `
 
 const BlogInfo = styled.div`
@@ -97,6 +120,10 @@ const TextWrap = styled.div`
     text-align: center;
     /* position: absolute; */
     top: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
 `
 
 const BlogContainer = styled.div`
@@ -129,13 +156,14 @@ const BlogContainer = styled.div`
 //make sure this is grid style
 const BlogContent = styled.div`
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px 10px;
     justify-items: center;
     padding: 0 2rem;
+    /* border: 2px solid green; */
  
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1800px) {
         grid-template-columns: 1fr 1fr;
         
     }
@@ -150,12 +178,19 @@ const BlogHeader = styled.div`
 
     font-size: clamp(1rem, 1vw, 2rem);
     text-align: center;
-    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
     color: white;
     text-transform: uppercase;
     font-weight: 600;
-    border: 2px solid blue;
-    padding: 5rem calc((100vw - 1300px) / 2);
+    /* border: 2px solid blue; */
+    padding: 3rem calc((100vw - 1300px) / 2);
+
+    @media screen and (max-width: 868px){
+        /* margin-bottom: 3rem; */
+        padding: 5rem calc((100vw - 1300px) / 2);
+    }
 
 `
 
