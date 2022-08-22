@@ -1,7 +1,9 @@
 ---
 title: Test Post
 author: Jan Rejas II
-date: 08-17-2022
+date: 2022-07-15
+featuredImage: ../assets/images/powMovement.png
+
 ---
 
 <!-- ## Introduction to my blog  -->

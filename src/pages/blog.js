@@ -7,10 +7,18 @@ import styled from 'styled-components'
 import Layout from "../components/layout"
 
 import { GiBleedingEye } from "react-icons/gi"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+
 // import { StaticImage } from 'gatsby-plugin-image';
 
 export default function Blog({ data }) {
   const { posts } = data.blog
+
+  
+
+
+
 
   return (
     <div>
@@ -34,9 +42,13 @@ export default function Blog({ data }) {
         <BlogContent>   
 
         {posts.map(post => (
+          
           <BlogCard key={post.id}>
+
+            {/* image = {post.frontmatter.featuredImage} */}
+
             <BlogInfo>
-            <Link to={post.fields.slug} css={`color: black; text-decoration: none;`}>
+            <Link to={post.fields.slug} css={`color: black; text-decoration: none; padding: 5px;`}>
               <h2>{post.frontmatter.title} <GiBleedingEye css={`
                   color: black;
                   font-size: 1.5rem;
@@ -47,6 +59,7 @@ export default function Blog({ data }) {
               `}/></h2>
               
             </Link>
+            {/* <GatsbyImage image = {image} alt = {post.frontmatter.author} /> */}
             </BlogInfo>
             <TextWrap>
             <small>
@@ -67,23 +80,55 @@ export default function Blog({ data }) {
   )
 }
 
+// export const pageQuery = graphql`
+//   query MyQuery {
+//     blog: allMarkdownRemark(
+//       filter: {frontmatter: {}}
+//       sort: {fields: frontmatter___date, order: DESC}
+//     ) {
+//       posts: nodes {
+//         fields {
+//           slug
+//         }
+//         frontmatter {
+//           date(fromNow: true)
+//           title
+//           author
+//         }
+//         excerpt(pruneLength: 480)
+//         id
+//       }
+//     }
+//   }
+
+// `
+
 export const pageQuery = graphql`
   query MyQuery {
-    blog: allMarkdownRemark {
+    blog: allMarkdownRemark(
+      filter: {frontmatter: {}}
+      sort: {fields: frontmatter___date, order: DESC}
+    ) {
       posts: nodes {
         fields {
           slug
         }
         frontmatter {
-          date
+          date(fromNow: true)
           title
           author
+          featuredImage{
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
         }
-        excerpt
+        excerpt(pruneLength: 480)
         id
       }
     }
   }
+
 `
 
 const BlogCard = styled.div`
@@ -93,7 +138,7 @@ const BlogCard = styled.div`
   color: black;
 
   width: 500px;
-  height: auto;
+  height: 300px;
 
   @media screen and (max-width: 1200px) {
         width: 400px;
@@ -117,13 +162,15 @@ const BlogInfo = styled.div`
 const TextWrap = styled.div`
 
     /* align-items: center; */
-    text-align: center;
+    /* text-align: center; */
     /* position: absolute; */
     top: 375px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 100px;
+    justify-content: space-between;
+    height: 220px;
+    padding: 8px;
+    /* border: 2px solid red; */
 `
 
 const BlogContainer = styled.div`
@@ -136,7 +183,7 @@ const BlogContainer = styled.div`
     position: relative;
     margin-top: -100px;
     flex-direction: column;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
    
 `
 
