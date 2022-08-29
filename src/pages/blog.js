@@ -15,9 +15,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 export default function Blog({ data }) {
   const { posts } = data.blog
 
+
+  // const image = getImage(posts.frontmatter.featuredImage)
   
-
-
 
 
   return (
@@ -45,8 +45,6 @@ export default function Blog({ data }) {
           
           <BlogCard key={post.id}>
 
-            {/* image = {post.frontmatter.featuredImage} */}
-
             <BlogInfo>
             <Link to={post.fields.slug} css={`color: black; text-decoration: none; padding: 5px;`}>
               <h2>{post.frontmatter.title} <GiBleedingEye css={`
@@ -59,14 +57,20 @@ export default function Blog({ data }) {
               `}/></h2>
               
             </Link>
-            {/* <GatsbyImage image = {image} alt = {post.frontmatter.author} /> */}
+          
             </BlogInfo>
             <TextWrap>
             <small>
               {post.frontmatter.author}, {post.frontmatter.date}
             </small>
+            <br></br>
             <p>{post.excerpt}</p>
+            
             </TextWrap>
+            <BlogImage>
+            <GatsbyImage image = {getImage(post.frontmatter.featuredImage)} alt = {post.frontmatter.author} />
+            <div>Scientific References</div>
+            </BlogImage>
           </BlogCard>
         ))}
   
@@ -136,13 +140,30 @@ const BlogCard = styled.div`
   border-radius: 12px;
   background: white;
   color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   width: 500px;
-  height: 300px;
+  height: 500px;
 
   @media screen and (max-width: 1200px) {
         width: 400px;
+        height: 550px;
         
+    }
+
+`
+
+const BlogImage = styled.div`
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media screen and (max-width: 868px){
+        /* margin-bottom: 3rem; */
+        padding-top: 10px;
     }
 
 `
@@ -152,6 +173,8 @@ const BlogInfo = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 2rem;
+
+    /* border: 2px solid green; */
 
     @media screen and (max-width: 280px){
         padding: 0 1rem;
@@ -170,7 +193,7 @@ const TextWrap = styled.div`
     justify-content: space-between;
     height: 220px;
     padding: 8px;
-    /* border: 2px solid red; */
+    /* border: 2px solid blue; */
 `
 
 const BlogContainer = styled.div`
@@ -234,10 +257,7 @@ const BlogHeader = styled.div`
     /* border: 2px solid blue; */
     padding: 3rem calc((100vw - 1300px) / 2);
 
-    @media screen and (max-width: 868px){
-        /* margin-bottom: 3rem; */
-        padding: 5rem calc((100vw - 1300px) / 2);
-    }
+   
 
 `
 

@@ -4,6 +4,9 @@ author: Jan Rejas II
 date: 2021-07-15
 featuredImage: ../assets/images/powMovement.png
 
+hero_image: "../assets/images/powMovement.png"
+hero_image_alt: "blog log"
+
 ---
 
 <!-- ## Introduction to my blog  -->
