@@ -2,7 +2,7 @@
 title: Test Post
 author: Jan Rejas II
 date: 2020-07-16
-featuredImage: ./assets/images/powMovement.png
+featuredImage: ../assets/images/powMovement.png
 
 ---
 

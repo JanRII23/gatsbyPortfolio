@@ -35,7 +35,11 @@ export default function Blog({ data }) {
 
           <h1>BLOG POSTS</h1>
           <br></br>
-          <Link to="/" css={`color: white; text-decoration: none;`}>HOME</Link>
+          <Link to="/" css={`color: white; text-decoration: none;
+          &:hover{
+            color: black;
+          }
+          `}>HOME</Link>
 
         </BlogHeader>
 
@@ -69,7 +73,7 @@ export default function Blog({ data }) {
             </TextWrap>
             <BlogImage>
             <GatsbyImage image = {getImage(post.frontmatter.featuredImage)} alt = {post.frontmatter.author} />
-            <div>Scientific References</div>
+            {/* <div>Scientific References</div> */}
             </BlogImage>
           </BlogCard>
         ))}
@@ -123,7 +127,8 @@ export const pageQuery = graphql`
           author
           featuredImage{
             childImageSharp {
-              gatsbyImageData(width: 200)
+              gatsbyImageData(width: 350
+                              height: 200)
             }
           }
         }
@@ -144,7 +149,7 @@ const BlogCard = styled.div`
   flex-direction: column;
   justify-content: space-around;
 
-  width: 500px;
+  width: 450px;
   height: 500px;
 
   @media screen and (max-width: 1200px) {
@@ -227,7 +232,7 @@ const BlogContainer = styled.div`
 const BlogContent = styled.div`
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 30px 10px;
+    grid-gap: 30px 0px;
     justify-items: center;
     padding: 0 2rem;
     /* border: 2px solid green; */
