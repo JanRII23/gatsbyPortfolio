@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import EmailBg from '../assets/images/gatsby-icon.png'
 // import { SiLinkedin } from 'react-icons/si'
 import { Button } from './Button'
-import resume from "../assets/images/Jan_Rejas_Resume.pdf"
+import resume from "../assets/images/Jan_Resume.pdf"
 
 //make sure to add some sort of database
 //find a new image as an overlay
