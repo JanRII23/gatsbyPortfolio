@@ -1,6 +1,6 @@
 [
     {
-        "img": "../assets/images/gallery.png",
+        "img": "../assets/images/theDelivererNew.png",
         "alt": "Unity Project",
         "name": "The Deliverer (Unity3d)",
         "button" : "Unity 3D",
@@ -13,6 +13,15 @@
         "button" : "test",
         "link": "https://github.com/JanRII23/ehr_emr/tree/main/angularEHR_main"
     },
+
+    {
+        "img": "../assets/images/TartarusCompund.png",
+        "alt": "Unity Project",
+        "name": "Tartarus Compound (Unity2d)",
+        "button" : "Unity 2D",
+        "link": "https://youtu.be/HT3y_G_wq2c"
+    },
+
     {
         "img": "../assets/images/powMovement.png",
         "alt": "Fitness Blog",
