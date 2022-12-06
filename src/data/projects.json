@@ -10,7 +10,7 @@
         "img": "../assets/images/toDoLogo.png",
         "alt": "To-Do App",
         "name": "Angular To-Do App",
-        "button" : "test",
+        "button" : "To-Do",
         "link": "https://github.com/JanRII23/ehr_emr/tree/main/angularEHR_main"
     },
 
@@ -23,10 +23,18 @@
     },
 
     {
+        "img": "../assets/images/cyberSecurity.png",
+        "alt": "Cybersecurity Blog",
+        "name": "CyberSec",
+        "button" : "CyberSec",
+        "link": "/blog"
+    },
+
+    {
         "img": "../assets/images/powMovement.png",
         "alt": "Fitness Blog",
         "name": "PowMovement",
-        "button" : "test",
+        "button" : "PowMovement",
         "link": "/blog"
     },
 
@@ -34,7 +42,7 @@
         "img": "../assets/images/KlinikhMain.png",
         "alt": "Electronic Health Record",
         "name": "Klinik|H| - in development",
-        "button" : "test",
+        "button" : "EMR",
         "link": "https://docs.google.com/document/d/1XTOdvD4dtr6odXeKW4zQMQtocYtinLdGs1wtDNlR0aU/edit?usp=sharing"
     }
    
