@@ -41,7 +41,7 @@ const Header = () => {
 
   return (
     <Nav>
-        <NavLink smooth to="#ProfileInfo" stripHash>JANRII</NavLink>
+        <NavLink smooth to="/" stripHash>JANRII</NavLink>
         <Bars />
         {/* <NavMenu>
           {menuData.map((item, index)=> (

@@ -6,8 +6,12 @@ import { Link } from "gatsby"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 
-import { GiBleedingEye } from "react-icons/gi"
+// import { GiBleedingEye } from "react-icons/gi"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import { FaLinkedinIn } from 'react-icons/fa'
+
+import { BsCalendarWeek } from "react-icons/bs"
+import { GiWeightLiftingUp } from 'react-icons/gi'
 
 import { useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -27,85 +31,148 @@ export default function Blog({ data }) {
     <div>
       <Layout>
         <BlogContainer>
-          <ContentWrapper>
 
-            {/* <BlogBg>
+
+          {/* <BlogBg>
             
             <StaticImage style = { {position: 'absolute', width: '100%',
     height: '100%'} } src="../assets/images/backgroundmainOutside.png" alt="Background Img"  />
         </BlogBg> */}
 
-            {/* <BlogHeader>
+          {/* <BlogHeader>
 
             </BlogHeader> */}
 
-            <BlogHeaderMain>
+          <BlogHeaderMain>
 
-          <Posts>
-          <h2>BLOG POSTS  |  </h2>
-      
-          </Posts>
-          <Home>
-          <h2><Link to="/" css={`color: white; text-decoration: none;
+
+
+            <Home>
+              <h1><Link to="/" css={`color: white; text-decoration: none;
           &:hover{
             color: black;
           }
-          `}>&nbsp;HOME</Link></h2>
-          </Home>
-        </BlogHeaderMain>
+          `}>HOME</Link></h1>
+            </Home>
 
-            <NewBlogHeaderMain>
+            <Posts>
+
+              <h1>&nbsp;|&nbsp;EXPLORE |</h1>
+
+            </Posts>
+
+            <Posts>
+              <h1>&nbsp;SEARCH</h1>
+
+              {/* <FaLinkedinIn css={`color: white; font-size: 2rem;
+              &:hover{
+                cursor: pointer;
+              }
+
+            `} />*/ }
+            </Posts>
+
+          </BlogHeaderMain>
+
+          <NewBlogHeaderMain>
+
+            <Information>
+
+              <Button>OWASP Top 10</Button>
+              <Button>Penetration Testing</Button>
+              <Button>Network Based Attacks</Button>
+              <Button>Malware Analysis</Button>
+
+            </Information>
 
 
+            {data.allFile.edges.map((image, key) => (
+              <BlogImages key={key} fluid={image.node.childImageSharp.fluid} />
+            ))}
+
+            <Information>
+
+              <Button>Powerlifting</Button>
+              <Button>Calisthenics</Button>
+              <Button>Triathlon</Button>
+              <Button>Flow Movement</Button>
+
+            </Information>
 
 
-              {data.allFile.edges.map((image, key) => (
-                <BlogImages key={key} fluid={image.node.childImageSharp.fluid} />
-              ))}
+          </NewBlogHeaderMain>
 
+          <BlogContent>
 
+            {posts.map(post => (
 
-            </NewBlogHeaderMain>
+              <BlogCard key={post.id}>
 
-            <BlogContent>
+                <BlogImage>
+                  <GatsbyImage image={getImage(post.frontmatter.featuredImage)} alt={post.frontmatter.author} />
+                  {/* <div>Scientific References</div> */}
+                </BlogImage>
 
-              {posts.map(post => (
-
-                <BlogCard key={post.id}>
-
-                  <BlogInfo>
-                    <Link to={post.fields.slug} css={`color: black; text-decoration: none; padding: 5px;`}>
-                      <h2>{post.frontmatter.title} <GiBleedingEye css={`
-                  color: black;
+                <BlogInfo>
+                  <Link to={post.fields.slug} css={`color: white; text-decoration: none; padding: 5px;`}>
+                    <h2>{post.frontmatter.title} 
+                    
+                  {/* <GiBleedingEye css={`
+                  color: white;
                   font-size: 1.5rem;
                   padding-top: 2px;
                   &:hover{
                     cursor: pointer;
                   }              
-              `} /></h2>
+              `} /> */}
+              
+              </h2>
 
-                    </Link>
+                  </Link>
 
-                  </BlogInfo>
-                  <TextWrap>
-                    <small>
-                      {post.frontmatter.author}, {post.frontmatter.date}
-                    </small>
-                    <br></br>
-                    <p>{post.excerpt}</p>
+                </BlogInfo>
+                <TextWrap>
 
-                  </TextWrap>
-                  <BlogImage>
-                    <GatsbyImage image={getImage(post.frontmatter.featuredImage)} alt={post.frontmatter.author} />
-                    {/* <div>Scientific References</div> */}
-                  </BlogImage>
-                </BlogCard>
-              ))}
+                  <Coheader>
+                    <div>
+                  {/* {post.frontmatter.author},  */}
+                    {/* <BsCalendarWeek css={`
+                  color: white;
+                  font-size: 2rem;
+                  
+                
+              `} /> */}
+                    
+                   
+                   {post.frontmatter.author},&nbsp;{post.frontmatter.date}
+                  
+                   
+
+                    </div>
+                    {/* <GiWeightLiftingUp css={`
+                  color: white;
+                  font-size: 2rem;
+                  
+               
+              `} /> */}
+
+                    
+
+                  </Coheader>
+
+                  {/* <br></br> */}
+                  <p>{post.excerpt}</p>
+
+                </TextWrap>
 
 
-            </BlogContent>
+              </BlogCard>
+            ))}
 
-          </ContentWrapper>
+
+          </BlogContent>
+
+
 
         </BlogContainer>
 
@@ -153,12 +220,12 @@ export const pageQuery = graphql`
           author
           featuredImage{
             childImageSharp {
-              gatsbyImageData(width: 350
-                              height: 200)
+              gatsbyImageData(width: 500
+                              height: 280)
             }
           }
         }
-        excerpt(pruneLength: 480)
+        excerpt(pruneLength: 200)
         id
       }
     }
@@ -177,48 +244,27 @@ export const pageQuery = graphql`
   }
 
 `
-const NewBlogHeaderMain = styled.div`
-    /* border: 2px solid blue; */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 2rem;
-    grid-gap: 20px;
-    padding: 40px;
-
-    @media screen and (max-width: 500px){
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-    
-`
-
-const BlogImages = styled(Img)`
-    border-radius: 10px;
-    height: 100%;
-
-    @media screen and (max-width: 500px){
-        
-        display: none;
-    }
-`
-
-const ContentWrapper = styled.div`
 
 
-`
+
 
 
 const BlogCard = styled.div`
-  border: 2px solid black;
-  border-radius: 12px;
-  background: white;
-  color: black;
+  /* border: 1px solid white;
+  border-radius: 12px; */
+  /* background: white; */
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background: rgb(145,145,145);
 
-  width: 450px;
+  width: 500px;
   height: 500px;
+
+  /* border: 2px solid white;
+  border-radius: 12px; */
+  border: 3px solid white;
 
   @media screen and (max-width: 1200px) {
         width: 400px;
@@ -228,11 +274,22 @@ const BlogCard = styled.div`
 
 `
 
-const BlogImage = styled.div`
-  /* border: 2px solid red; */
+const Coheader = styled.small`
+  /* border: 2px solid white; */
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+
+`
+
+const BlogImage = styled.div`
+  //border: 8px solid black;
+  //border-radius: 12px;
+  display: flex;
+  //justify-content: space-evenly;
+  align-items: center;
+
 
   @media screen and (max-width: 868px){
         /* margin-bottom: 3rem; */
@@ -244,10 +301,11 @@ const BlogImage = styled.div`
 const BlogInfo = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 2rem;
+    align-items: left;
+    
+    background: rgb(145,145,145);
 
-    /* border: 2px solid green; */
+    /* border: 2px solid blue; */
 
     @media screen and (max-width: 280px){
         padding: 0 1rem;
@@ -263,10 +321,10 @@ const TextWrap = styled.div`
     top: 375px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 220px;
+    /* justify-content: space-between; */
+    height: 180px;
     padding: 8px;
-    /* border: 2px solid blue; */
+    /* border: 2px solid purple; */
 `
 
 const BlogContainer = styled.div`
@@ -280,27 +338,17 @@ const BlogContainer = styled.div`
    
 `
 
-// const BlogBg = styled.div`
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     right: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-
-
-// `
-
 
 //make sure this is grid style
 const BlogContent = styled.div`
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    
+    grid-template-columns: repeat(2,1fr);
     grid-gap: 30px 0px;
     justify-items: center;
     padding: 0 2rem;
-    border: 2px solid green;
+    /* border: 2px solid red; */
+    padding: 20px;
     
 
     @media screen and (max-width: 1800px) {
@@ -352,11 +400,74 @@ const BlogHeaderMain = styled.div`
 
 const Posts = styled.div`
 
-   // border: 2px solid green;
+font-size: clamp(1rem, 3vw, 1.35rem);
 `
 
 const Home = styled.div`
- // border: 2px solid green;
+ font-size: clamp(1rem, 2vw, 1.15rem);
 `
 
 
+const NewBlogHeaderMain = styled.div`
+    /* border: 2px solid blue; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: flex-start;
+    align-items: center;
+    margin-top: 2rem;
+    grid-gap: 20px;
+    padding: 30px;
+
+    @media screen and (max-width: 500px){
+        display: none;
+    }
+    
+`
+
+const BlogImages = styled(Img)`
+    border-radius: 5px;
+    /* height: 100%; */
+    width: 100%;
+
+    @media screen and (max-width: 500px){
+        
+        display: none;
+    }
+`
+
+const Button = styled.button`
+  background: rgb(145,145,145);
+  color: white;
+  padding: 10px 10px;
+
+`
+
+const Information = styled.div`
+    /* border-radius: 10px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border: 2px solid green;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    align-items: center; */
+
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid green; */
+    color: white;
+    padding: 16px 26px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-evenly;
+
+    @media screen and (max-width: 500px){
+        
+        display: none;
+    }
+
+   
+
+`
