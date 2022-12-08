@@ -2,6 +2,7 @@
 title: Test Post
 author: Jan Rejas II
 date: 2021-07-15
+keyword: SUBCATEGORY
 featuredImage: ../assets/images/powMovement.png
 
 ---
