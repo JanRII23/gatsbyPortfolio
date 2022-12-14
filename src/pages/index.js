@@ -6,6 +6,7 @@ import Projects from "../components/Projects"
 import About from "../components/ProfileInfo"
 // import Stats from "../components/Stats"
 import Email from "../components/Email"
+import MobileSocial from "../components/MobileSocial"
 
 
 // import { Link } from "gatsby"
@@ -94,6 +95,8 @@ const IndexPage = () => (
     <Email />
 
     {/* <EmailMain/> */}
+
+    <MobileSocial/>
   
   </Layout>
 )

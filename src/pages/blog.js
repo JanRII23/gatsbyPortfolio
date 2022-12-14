@@ -15,6 +15,7 @@ import { GiWeightLiftingUp } from 'react-icons/gi'
 
 import { useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import MobileSocial from "../components/MobileSocial"
 
 
 // import { StaticImage } from 'gatsby-plugin-image';
@@ -30,6 +31,7 @@ export default function Blog({ data }) {
   return (
     <div>
       <Layout>
+        
         <BlogContainer>
 
 
@@ -194,7 +196,7 @@ export default function Blog({ data }) {
 
 
         </BlogContainer>
-
+        <MobileSocial/>
       </Layout>
     </div>
   )
@@ -297,7 +299,8 @@ const BlogCard = styled.div`
 
   @media screen and (max-width: 1200px) {
         width: 400px;
-        height: 550px;
+        height: 485px;
+        
         
     }
 
@@ -320,9 +323,9 @@ const BlogImage = styled.div`
   align-items: center;
 
 
-  @media screen and (max-width: 868px){
+  @media screen and (max-width: 1200px){
         /* margin-bottom: 3rem; */
-        padding-top: 10px;
+        /* padding-top: 10px; */
     }
 
 `
@@ -447,8 +450,11 @@ const NewBlogHeaderMain = styled.div`
     grid-gap: 20px;
     padding: 30px;
 
-    @media screen and (max-width: 500px){
-        display: none;
+    @media screen and (max-width: 900px){
+        /* display: none; */
+        /* border: 2px solid blue; */
+        justify-items: center;
+        grid-template-columns: 1.5fr 1.5fr;
     }
     
 `
@@ -458,9 +464,11 @@ const BlogImages = styled(Img)`
     /* height: 100%; */
     width: 100%;
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 900px){
         
         display: none;
+
+        /* border: 2px solid green; */
     }
 `
 
@@ -505,9 +513,13 @@ const Information = styled.div`
     
     justify-content: space-evenly;
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 1200px){
         
-        display: none;
+        /* display: none; */
+        /* border: 2px solid green; */
+        padding: 16px 16px;
+        gap: 5px;
+        font-size: clamp(0.8rem, 1vw, 1.2rem);
     }
 
    
