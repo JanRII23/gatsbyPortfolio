@@ -10,8 +10,8 @@ import Layout from "../components/layout"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // import { FaLinkedinIn } from 'react-icons/fa'
 
-import { BsCalendarWeek } from "react-icons/bs"
-import { GiWeightLiftingUp } from 'react-icons/gi'
+// import { BsCalendarWeek } from "react-icons/bs"
+// import { GiWeightLiftingUp } from 'react-icons/gi'
 
 import { useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'

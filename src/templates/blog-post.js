@@ -108,6 +108,7 @@ const BlogPostContainer = styled.div`
     margin-top: -100px;
     flex-direction: column;
     padding: 5rem calc((100vw - 1300px) / 2);
+    
 `
 const BlogHeaderMain = styled.div`
 
@@ -133,10 +134,15 @@ font-size: clamp(1rem, 3vw, 1.35rem);
 `
 
 const PostTitle = styled.div`
-  /* border: 2px solid green; */
+  border: 2px solid green;
   display: flex;
   padding: 1rem calc((100vw - 1550px) / 2);
   color: white;
+  
+
+  @media screen and (max-width: 1550px) and (min-width: 1001px){
+    padding: 30px 70px 30px 30px;
+  }
 
   @media screen and (max-width: 1000px){
         /* display: none; */
@@ -152,12 +158,16 @@ const Home = styled.div`
 `
 
 const BlogPostContent = styled.div`
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   padding: 1rem calc((100vw - 1550px) / 2);
   color: white;
   
+  @media screen and (max-width: 1550px) and (min-width: 1001px){
+   
+    padding: 30px 70px 30px 30px;
+  }
 
   @media screen and (max-width: 1000px){
         /* display: none; */
@@ -175,6 +185,10 @@ const BlogPostImage = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem calc((100vw - 1550px) / 2);
+
+  @media screen and (max-width: 1600px) and (min-width: 1000px){
+    padding: 40px 40px 40px 40px;
+  }
 
   @media screen and (max-width: 1000px){
         /* display: none; */

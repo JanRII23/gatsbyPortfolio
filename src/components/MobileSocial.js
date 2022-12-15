@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { AiOutlineGithub } from "react-icons/ai"
 import { FaLinkedinIn } from 'react-icons/fa'
-import { IoIosArrowUp } from 'react-icons/io'
+// import { IoIosArrowUp } from 'react-icons/io'
 import { BiUpArrowCircle } from 'react-icons/bi'
 import { SiBuymeacoffee } from 'react-icons/si'
 
