@@ -15,6 +15,7 @@ export default function BlogPost({ data }) {
   return (
     <Layout>
       <BlogPostContainer>
+        
 
         <BlogHeaderMain>
 
@@ -108,7 +109,7 @@ const BlogPostContainer = styled.div`
     margin-top: -100px;
     flex-direction: column;
     padding: 5rem calc((100vw - 1300px) / 2);
-    
+    /* border: 2px solid red; */
 `
 const BlogHeaderMain = styled.div`
 
@@ -134,15 +135,16 @@ font-size: clamp(1rem, 3vw, 1.35rem);
 `
 
 const PostTitle = styled.div`
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: flex;
   padding: 1rem calc((100vw - 1550px) / 2);
   color: white;
   
+  @media screen and (max-width: 1800px) and (min-width: 1001px){
+   
+   padding: 20px 70px 20px 70px;
+ }
 
-  @media screen and (max-width: 1550px) and (min-width: 1001px){
-    padding: 30px 70px 30px 30px;
-  }
 
   @media screen and (max-width: 1000px){
         /* display: none; */
@@ -158,15 +160,15 @@ const Home = styled.div`
 `
 
 const BlogPostContent = styled.div`
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   display: flex;
   flex-direction: column;
   padding: 1rem calc((100vw - 1550px) / 2);
   color: white;
   
-  @media screen and (max-width: 1550px) and (min-width: 1001px){
+  @media screen and (max-width: 1800px) and (min-width: 1001px){
    
-    padding: 30px 70px 30px 30px;
+    padding: 20px 250px 20px 70px;
   }
 
   @media screen and (max-width: 1000px){
@@ -186,15 +188,18 @@ const BlogPostImage = styled.div`
   align-items: center;
   padding: 1rem calc((100vw - 1550px) / 2);
 
-  @media screen and (max-width: 1600px) and (min-width: 1000px){
-    padding: 40px 40px 40px 40px;
+  @media screen and (max-width: 1800px) and (min-width: 1000px){
+    /* padding: 40px 40px 40px 40px; */
+    padding: 20px 70px 20px 70px;
+    justify-content: start;
   }
 
   @media screen and (max-width: 1000px){
         /* display: none; */
         /* border: 2px solid blue; */
         //justify-items: center;
-        padding: 20px;
+        /* padding: 20px; */
+        padding: 10px 50px 10px 20px;
    
     }
   /* @media screen and (max-width: 900px){
