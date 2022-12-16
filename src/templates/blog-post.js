@@ -52,14 +52,16 @@ color: black;
 
         </BlogHeaderMain>
 
-        <PostTitle>
-        <h1>{post.frontmatter.title}</h1>
-        </PostTitle>
+        
 
         <BlogPostImage>
           <GatsbyImage image={image} alt={post.frontmatter.author} />
 
         </BlogPostImage>
+
+        <PostTitle>
+        <h1>{post.frontmatter.title}</h1>
+        </PostTitle>
 
         <BlogPostContent>
           {/* <small>{post.frontmatter.date}</small> */}
@@ -109,7 +111,7 @@ const BlogPostContainer = styled.div`
     margin-top: -100px;
     flex-direction: column;
     padding: 5rem calc((100vw - 1300px) / 2);
-    /* border: 2px solid red; */
+    border: 2px solid red;
 `
 const BlogHeaderMain = styled.div`
 
@@ -139,6 +141,10 @@ const PostTitle = styled.div`
   display: flex;
   padding: 1rem calc((100vw - 1550px) / 2);
   color: white;
+  font-size: 24px;
+
+  /* font-size: 28px; */
+  
   
   @media screen and (max-width: 1800px) and (min-width: 1001px){
    
@@ -151,6 +157,7 @@ const PostTitle = styled.div`
         /* border: 2px solid blue; */
         //justify-items: center;
         padding: 20px;
+        font-size: 18px;
    
     }
 `
@@ -163,8 +170,16 @@ const BlogPostContent = styled.div`
   /* border: 2px solid blue; */
   display: flex;
   flex-direction: column;
+
   padding: 1rem calc((100vw - 1550px) / 2);
   color: white;
+  font-size: 22px;
+
+  li {
+    display: block;
+    /* list-style-type: disc; */
+    padding-left: 20px;
+  }
   
   @media screen and (max-width: 1800px) and (min-width: 1001px){
    
@@ -177,6 +192,7 @@ const BlogPostContent = styled.div`
         //justify-items: center;
         padding: 10px 80px 10px 20px;
     
+        font-size: 18px;
    
     }
 `

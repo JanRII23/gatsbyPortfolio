@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Lacquer', cursive;
         
         
-        /* scroll-behavior: smooth; */
+       
     }
     ::-webkit-scrollbar{
         width: 0px;
