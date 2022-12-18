@@ -179,6 +179,7 @@ const BlogPostContent = styled.div`
     display: block;
     /* list-style-type: disc; */
     padding-left: 20px;
+    margin-bottom: 5px;
   }
   
   @media screen and (max-width: 1800px) and (min-width: 1001px){

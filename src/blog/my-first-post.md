@@ -7,7 +7,11 @@ featuredImage: ../assets/images/cyberImage.jpg
 
 ---
 
-December 18th, 2022 | Sensitive Data Exposure occurs when a company or individual inadvertently exposes their personal data by __accident__. Cyber threat actors can take advantage of this "__accident__" by utilizing different types of access control vulnerabilities to invade privacy, steal information, and commit crimes. This section aims to provide an overview of how Insecure Direct Object Reference (IDOR), an access control vulnerability, can target some common examples of data exposure.
+| December 18th, 2022 | 
+
+<br/>
+
+Sensitive Data Exposure occurs when a company or individual inadvertently exposes their personal data by __accident__. Cyber threat actors can take advantage of this "__accident__" by utilizing different types of access control vulnerabilities to invade privacy, steal information, and commit crimes. This section aims to provide an overview of how Insecure Direct Object Reference (IDOR), an access control vulnerability, can target some common examples of data exposure.
 <br/>
 <br/>
 ### Disclaimer
@@ -37,13 +41,13 @@ The three tenets that serves the foundation of developing a security system are 
 
 <br/>
 
-*  *  *  *  *  *  \- Eavesdropping attack
-*  *  *  *  *  *  \- Encryption cracking
-*  *  *  *  *  *  \- Malicious insiders
-*  *  *  *  *  *  \- Man-in-the-middle attack
-*  *  *  *  *  *  \- Data disclosure
-*  *  *  *  *  *  \- Masquerading
-*  *  *  *  *  *  \- Privilege Escalation
+*  *  *  *  *  *  \- Eavesdropping attack -> information theft from a device while the target user is sending or receiving data over the internet (Passive and Observant)
+*  *  *  *  *  *  \- Encryption cracking -> breaching network encryptions
+*  *  *  *  *  *  \- Malicious insiders -> a person with insider knowledge and uses the information to negatively impact the business
+*  *  *  *  *  *  \- Man-in-the-middle attack -> unlike eavesdropping, the target is sending or receiving data from the threat actor instead of the client or server
+*  *  *  *  *  *  \- Data disclosure -> the exposure of sensitive and confidential data
+*  *  *  *  *  *  \- Masquerading -> the threat actor is posing as an authorized user like admin
+*  *  *  *  *  *  \- Privilege Escalation -> unauthorized privilege access into a  system
 
 <br/>
 
@@ -51,10 +55,9 @@ The three tenets that serves the foundation of developing a security system are 
 
 <br/>
 
-*  *  *  *  *  *  \- Encryption
-*  *  *  *  *  *  \- Authentication
-*  *  *  *  *  *  \- Authorization
-*  *  *  *  *  *  \- Data Management
+*  *  *  *  *  *  \- Encryption -> scrambling data in which authorized individuals can only read and send information
+*  *  *  *  *  *  \- Authentication -> verification of identity
+*  *  *  *  *  *  \- Authorization -> verification of access levels
 
 <br/>
 
@@ -114,10 +117,13 @@ The three tenets that serves the foundation of developing a security system are 
 The mix between each tenet of the CIA triad is not necessarily the alike for each security system. There are instances where one of the tenet may be prioritized. However, it is of the utmost importance to provide sufficient privacy protection.
 
 
+<br/>
 
 	Access Control
-	Access control is a fundamental component of data security that dictates who’s allowed to access and use company information and resources
-	Access control policies ensure that users are who they say they are and have proper access to data through authentication and authorization
+	Access control is a fundamental component of data security that dictates who’s allowed to access and 
+	use company information and resources
+	Access control policies ensure that users are who they say they are and have proper access to data 
+	through authentication and authorization
 	Access control types
 	Discretionary access control
 	Owner of the data defines the rules and controls access
@@ -156,8 +162,10 @@ URL Manipulation and IDOR
 	This involves session management where the user hast to be authenticated and/or authorized
 
 	IDOR types
-	Body manipulation: attackers modify the value of a checkbox, radio buttons, and form fields. This lets them access information from other users with ease
-	URL tampering: The url is modified client side by tweaking the parameters in the HTTP request. HTTP verbs GET and POST are typically vulnerable to a URL tampering IDOR attack
+	Body manipulation: attackers modify the value of a checkbox, radio buttons, and form fields. 
+	This lets them access information from other users with ease
+	URL tampering: The url is modified client side by tweaking the parameters in the HTTP request. 
+	HTTP verbs GET and POST are typically vulnerable to a URL tampering IDOR attack
 
 Mitigation
 	Sensitive Data Exposure Prevention
@@ -174,39 +182,5 @@ Mitigation
 	Alerts – log access control failures, alert admins, when appropriate
 	Indirect object reference – limit meaning of the parameter to the user’s scope or non-predictable character string
 	IDOR / URL Manipulation Case Studies
+	
 Pre-reading
-Fundamental Security Principles
-	Never trust users, even the most trusted individuals can have their information stolen
-	Least Privilege
-	The principle holds the idea that a user should only be allowed/privilege of access which are essential to the user’s work or overall experience
-	Code should also follow the same principle thus OOP
-	Simple is more secure  complex systems is a double edged sword, meaning that it can introduce bugs and security vulnerabilities
-	Expect the unexpected security is proactive, not reactive. Always think of ways in which a hacker might think. Provide a template of edge cases to consider when thinking of a system vulnerability
-	Defense in depth  have layers of security in place People, technology, and process. Think how a skydiver doesn’t just jump with one parachute
-	Security through obscurity  instead of username found, but password wrong. Place username or password wrong this give the hacker no information of either or was correct
-	Prefer whitelisting over blacklisting listing what or who is permitted over what is forbidden. That way make everything private and just allow access better to manage the distribution of information “i.e. secure by default”
-	Map data movement and exposure, data is a commodity take note of how data is entered into the system, moves within the system, where it is stored, and how it returned/used
-
-HTTP Request Types
-	HEAD, PUT, DELETE, CONNECT, and OPTIONS are other examples but the most common is GET and POST
-	Get request 
-	Sent when url is submitted in the browser location bar or a user clicks a link
-	Send data in the URL and query string
-	Reloadable
-	Can bookmark
-	User for read-only operations
-	View, search, sort, or filter data
-	Data does not change
-POST request
-	Sent when web form is submitted 
-	Send data in the URL and as an attachment
-	Semi-reloadable
-	Can not bookmark
-	Used for write operations
-	Create, update, or delete data
-	Data does not change
-
-The most common web based attack is URL Manipulation
-	List common types of manipulation
-	What exactly is a URL??
-
