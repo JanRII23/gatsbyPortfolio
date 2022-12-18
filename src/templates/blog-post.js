@@ -55,7 +55,7 @@ color: black;
         
 
         <BlogPostImage>
-          <GatsbyImage image={image} alt={post.frontmatter.author} />
+          <GatsbyImage image={image} alt={post.frontmatter.author} css={`border: 3px solid white;`}/>
 
         </BlogPostImage>
 
@@ -111,7 +111,7 @@ const BlogPostContainer = styled.div`
     margin-top: -100px;
     flex-direction: column;
     padding: 5rem calc((100vw - 1300px) / 2);
-    border: 2px solid red;
+    /* border: 2px solid red; */
 `
 const BlogHeaderMain = styled.div`
 
@@ -203,6 +203,7 @@ const BlogPostImage = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem calc((100vw - 1550px) / 2);
+
 
   @media screen and (max-width: 1800px) and (min-width: 1000px){
     /* padding: 40px 40px 40px 40px; */

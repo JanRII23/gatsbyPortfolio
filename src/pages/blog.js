@@ -168,6 +168,7 @@ export default function Blog({ data }) {
 
                   {/* <br></br> */}
                   <Link to={post.fields.slug} css={`color: white; text-decoration: none;`}>
+                    
                   <p>{post.excerpt}</p>
                   </Link>
 
