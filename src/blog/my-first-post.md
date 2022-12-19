@@ -7,7 +7,7 @@ featuredImage: ../assets/images/cyberImage.jpg
 
 ---
 
-| December 18th, 2022 | 
+| December 17th, 2022 | 
 
 <br/>
 
