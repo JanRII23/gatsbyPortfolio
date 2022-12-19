@@ -1,9 +1,9 @@
 ---
-title: Test Post
+title: Calisthenics x Powerlifting
 author: Jan Rejas II
-date: 2022-07-15
-keyword: SUBCATEGORY
-featuredImage: ../assets/images/powMovement.png
+date: 2022-12-19
+keyword: Calisthenics
+featuredImage: ../assets/images/calisthenics.jpg
 
 ---
 

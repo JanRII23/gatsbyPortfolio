@@ -238,7 +238,7 @@ export const pageQuery = graphql`
         }
         frontmatter {
           date(fromNow: true)
-          title
+          title 
           author
           keyword
           featuredImage{
