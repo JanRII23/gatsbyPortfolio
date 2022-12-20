@@ -305,6 +305,11 @@ const BlogCard = styled.div`
         
     }
 
+  @media screen and (max-width: 550px){
+        width: 310px;
+        height: 483px;
+    }
+
 `
 
 const Coheader = styled.small`
@@ -381,7 +386,7 @@ const BlogContent = styled.div`
     justify-items: center;
     padding: 0 2rem;
     /* border: 2px solid purple; */
-    padding: 20px;
+    /* padding: 20px; */
     
 
     @media screen and (max-width: 1800px) {
@@ -391,6 +396,10 @@ const BlogContent = styled.div`
 
     @media screen and (max-width: 868px){
         grid-template-columns: 1fr;
+    }
+
+    @media screen and (max-width: 280px){
+        padding: 0 1rem;
     }
 
 `

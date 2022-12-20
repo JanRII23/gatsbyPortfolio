@@ -7,6 +7,8 @@ import styled from 'styled-components'
 import Layout from "../components/layout"
 import MobileSocial from "../components/MobileSocial"
 
+//Deploying to S3 --> build first then AWS_ACCESS_KEY_ID=xxxx AWS_SECRET_ACCESS_KEY=xxxx npm run deploy  then gatsby clean 
+
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
 
