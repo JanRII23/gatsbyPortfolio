@@ -1,0 +1,79 @@
+New picture, pexels “code” or “programming”
+Cookie & Session Attacks
+Jan Rejas II, Today
+| January 4, 2023 | 
+
+Intro
+-	Cookie and session-based attacks are all about manipulating elements of an HTTP request. Cyber threat actors use cookie and session-based attacks to achieve authentication of a user account(s) and gain unauthorized access to private information. To grasp the concept of this form of a cyber-attack, it is essential to understand the fundamentals of HTTP requests and different ways that client requests (usually web browsers) are stored on a web server.
+
+
+HTTP request 
+	HyperText Transfer Protocol (HTTP) request is used to fetch data between web browsers and servers. The general structure of a HTTP request contains a request line, HTTP header, and a message body. 
+-	Request Line
+o	HTTP Method  GET, POST, PUT, etc… 
+o	Request target  which can be the URI or URL
+-	HTTP Header
+o	Supporting information that provides a web client’s (web browser) request more clearly
+-	Message body
+o	While not all request have a body, it is typically used to send information back to the client
+ An example of a HTTP request is as follows:
+1.	User wants to visit a webpage on a site by using a web browser which results in an HTTP request sent to the web server 
+2.	With the request, the web server sends over a file containing information that is pertinent to the webpage
+3.	The file sent by the web server is then rendered on the user side
+4.	If there is more information and files needed. Then another http request will be sent (lazy-loading etc..)
+  It’s important to note that HTTP is a stateless protocol, meaning that each request sent over and response received are independent of each other (i.e., every request is new). To have a personal and convenient browsing experience, mechanisms like cookies and sessions are incorporated within HTTP requests.
+
+
+Cookies vs. Sessions
+Cookies are small pieces of information in a file sent over by a web server and stored on the client side (user’s web browser). Unlike cookies, sessions are stored on the server side and only references a unique identifier, called “session ID”, which is sent to the user’s browser as a cookie or appended to the URL. Both Cookie and Session files contain identity and browser state information for a variety of purposes such as
+1.	Authentication
+2.	Record items (for example e-commerce site in cart)
+3.	Record webpages visited
+4.	Record user information
+
+Cookies 
+-	Lifetime set by the user
+-	Store certain and limited amount of information or it will reduce load time
+-	Not secured
+-	Stored in a text file
+Sessions
+-	When browser logs out or exits the session is over
+-	Holds indefinite amount of data
+-	Information stored are encrypted
+
+Why and when to use either (with examples)
+-	Sensitive actions like email changes or password changes no to all??, sensitive data never in a cookie but session okay, remember-me data in a cookie
+-	Must the persistent data remain when the user closes the browser? 
+o	Persistent data is when information on a webpage is infrequently accessed and not likely to be modified. 
+o	If yes, use cookies
+o	If No, use sessions
+-	But keep a note that its not this necessarily black or white  can be a modification of both
+
+
+Cookie and Session based attacks
+	HTTP request to web servers can be faked. With that in mind, cyber threat actors can simply send HTTP request with malicious modifications (known as “request spoofing”). Commonly modified part of HTTP request are as follows:
+-	Referrer
+-	X-forward-for
+-	User-agent
+-	Cookie data
+-	Form data
+
+Whenever a successful faked request is achieved, session hijacking, csrf 
+o	Hijacking = steal a session id an use the stolen session in your requests to impersonate the victim
+-	The simplest csrf attack is tricking a user into making a GET request to a URL, an example could be just clicking an image/ hyperlink
+-	When an image is loaded the request is automatically run
+-	Cross Site Request Forgery (CSRF)
+o	A type of attack in which a user is tricked into performing actions on another site by inadvertently clicking a link or a submitting a form
+	“Cross-site”: originates on one site but performs an action to another
+	“Request Forgery”: it is not a genuine user request
+-	Cookie theft
+
+
+-	 Incorporate tokens tokens
+-	Mitigations 
+o	Always be vigilant with faked request
+o	Session id needs to be random
+o	Right use of http methods like GET
+o	Honeypots
+
+
