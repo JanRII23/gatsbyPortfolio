@@ -1,5 +1,5 @@
 ---
-title: Cookie & Session Attacks
+title: Cookie & Session Based Attacks
 author: Jan Rejas II
 date: 2023-01-04
 keyword: OWASP 10
@@ -124,7 +124,7 @@ __Cookies__ are small pieces of information in a file sent over by a web server 
 
 <br/>
 
-Although this is not necessarily absolute, an important question to ask is that muse the __persistent data__ remain when the user closes the browser?
+Although this is not necessarily absolute, an important question to ask is that must the __persistent data__ remain when the user closes the browser?
 
 <br/>
 
@@ -134,6 +134,43 @@ Although this is not necessarily absolute, an important question to ask is that 
 *  *  * \- no = sessions
 
 <br/>
+
+### | Cookie and Session Based Attacks |
+<br/>
+
+HTTP requests to web servers can be faked because it is simply a string of formatted data. With that in mind, cyber threat actors can send HTTP requests with malicious modifications to sites that have authentication vulnerabilities. As noted, cookies and/or sessions files are part of HTTP request contained in the header.
+
+
+<br/>
+
+*  * \- __| Forms of Attack |__
+
+<br/>
+
+*  *  *  *  1\. Cross-Site Request Forgery (CSRF) - when a user is tricked into performing actions to another site by inadvertently clicking a link or submitting a form.
+
+*  *  *  *  2\. Cookie Theft and Manipulation - when a cyber threat actor steals a sensitive data stored in a cookie and sends a modified HTTP request to impersonate the victim.
+
+*  *  *  *  3\. Session Hijacking - when a cyber threat actor steals a user's session id and sends a modified HTTP request to impersonate the victim.
+
+*  *  *  *  4\. Session Fixation - unlike hijacking, cyber threat actor issues a session id to a user's browser forcing to use the chosen session id.
+
+<br/>
+
+*  * \- __| Preventative Methods |__
+
+<br/>
+
+*  *  *  *  \- Vigilance with faked request
+
+*  *  *  *  \- Session ID need to be random
+
+*  *  *  *  \- Practicing correct usage of HTTP methods
+
+*  *  *  *  \- Security focused usage of cookies and sessions
+
+*  *  *  *  \- Honeypots in which a security mechanism is put in place to counteract cyber-attack attempts
+
 
 
 <br/>

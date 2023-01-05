@@ -301,14 +301,16 @@ const BlogCard = styled.div`
 
   @media screen and (max-width: 1200px) {
         width: 400px;
-        height: 485px;
-        
+        height: 510px;
+        /* border: 0px; */
         
     }
 
   @media screen and (max-width: 550px){
         width: 310px;
-        height: 483px;
+        height: 510px;
+        justify-content: space-between;
+       
     }
 
 `
@@ -328,12 +330,25 @@ const BlogImage = styled.div`
   display: flex;
   //justify-content: space-evenly;
   align-items: center;
+  /* background-color: black; */
+  border-bottom: 3px solid white;
+  transition: all .4s ease;
+
+  &:hover{
+    //border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+ 
+    border-bottom: 3px solid rgba(0,0,0,.15);
+  }
 
 
   @media screen and (max-width: 1200px){
         /* margin-bottom: 3rem; */
         /* padding-top: 10px; */
+        
+        
     }
+
+
 
 `
 
@@ -345,6 +360,8 @@ const BlogInfo = styled.div`
     background: rgb(145,145,145);
 
     /* border: 2px solid blue; */
+
+ 
 
     @media screen and (max-width: 280px){
         padding: 0 1rem;
@@ -474,7 +491,7 @@ const BlogImages = styled(Img)`
     border-radius: 5px;
     /* height: 100%; */
     width: 100%;
-
+  
     @media screen and (max-width: 900px){
         
         display: none;
