@@ -150,7 +150,8 @@ export default function Blog({ data }) {
               `} /> */}
 
                   
-                      {post.frontmatter.author},&nbsp;{post.frontmatter.date}
+                      {post.frontmatter.author}&nbsp;
+                      {/* {post.frontmatter.date} */}
 
 
 
